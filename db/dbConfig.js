@@ -34,7 +34,7 @@ let question = `CREATE TABLE if not exists question(
   PRIMARY KEY (question_id),
   FOREIGN KEY (userid) REFERENCES registration(userid)
 )`;
-let answer = `CREATE TABLE if not exists answer(
+le = `CREATE TABLE if not exists answer(
   answer_id int auto_increment,
   userid int not null,
   question_id int not null,

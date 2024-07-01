@@ -1,11 +1,12 @@
 const mysql2 = require("mysql2");
 
-const dbConnection = mysql2.createPool({
-  user: process.env.USER,
-  database: process.env.DATABASE,
-  host:process.env.HOST,
-  password: process.env.PASSWORD,
-  connectionLimit: 10,
+
+  const dbConnection = mysql2.createPool({
+    user: process.env.USER,
+    database: process.env.DATABASE,
+    host: process.env.Host,  // Ensure case matches your environment variable
+    password: process.env.PASSWORD,
+    connectionLimit: 10,
 });
 
 let registration = `CREATE TABLE if not exists registration(
@@ -34,7 +35,7 @@ let question = `CREATE TABLE if not exists question(
   PRIMARY KEY (question_id),
   FOREIGN KEY (userid) REFERENCES registration(userid)
 )`;
-le = `CREATE TABLE if not exists answer(
+let answer = `CREATE TABLE if not exists answer(
   answer_id int auto_increment,
   userid int not null,
   question_id int not null,
